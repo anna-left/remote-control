@@ -1,23 +1,27 @@
 {
-    "name": "ws_task",
-    "version": "1.0.0",
-    "description": "Template for the WebSocket remote control task",
-    "main": "index.js",
-    "type": "module",
-    "scripts": {
-        "start": "node ./index.js",
-        "start:dev": "nodemon ./index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Andrei Auchynnikau",
-    "keywords": [],
-    "license": "ISC",
-    "devDependencies": {
-        "nodemon": "^2.0.16"
-    },
-    "dependencies": {
-        "jimp": "^0.16.1",
-        "robotjs": "^0.6.0",
-        "ws": "^8.8.0"
-    }
+  "name": "ws_task",
+  "version": "1.0.0",
+  "description": "Template for the WebSocket remote control task",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "start npm run start:front && start npm run start:back",
+    "start:front": "node ./index.js",
+    "start:back": "cd back && npm run start:prod",
+    "start:devfront": "nodemon ./index.js",
+    "start:devback": "cd back && npm run start:dev"
+  },
+  "author": "Andrei Auchynnikau",
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/ws": "^8.5.3",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "jimp": "^0.16.1",
+    "robotjs": "^0.6.0",
+    "ws": "^8.8.0",
+    "dotenv": "^16.0.1"
+  }
 }
